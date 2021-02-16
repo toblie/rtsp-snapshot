@@ -1,11 +1,8 @@
 # RTSP Snapshot
 
-[![Build Status](https://travis-ci.org/Thom-x/rtsp-snapshot.svg?branch=master)](https://travis-ci.org/Thom-x/rtsp-snapshot)
-![](https://images.microbadger.com/badges/image/thomx/rtsp-snapshot.svg)
-![](https://images.microbadger.com/badges/version/thomx/rtsp-snapshot.svg)
-![GitHub](https://img.shields.io/github/license/Thom-x/rtsp-snapshot)
 
-Simple docker image to grab snapshot from a RTSP stream.
+
+Simple docker image to grab snapshot from a RTSP stream using ARM64 device like RPi as a form from https://github.com/Thom-x/rtsp-snapshot.
 
 ## Getting Started
 
@@ -15,8 +12,7 @@ These instructions will cover usage information and for the docker container
 
 In order to run this container you'll need docker installed.
 
-* [Windows](https://docs.docker.com/windows/started)
-* [OS X](https://docs.docker.com/mac/started/)
+* [RaspberryPi](https://www.docker.com/blog/happy-pi-day-docker-raspberry-pi/)
 * [Linux](https://docs.docker.com/linux/started/)
 
 ### Usage
@@ -26,7 +22,7 @@ In order to run this container you'll need docker installed.
 Run the image
 
 ```shell
-docker run "/path/to/snapshot/on/host:/var/www/localhost/htdocs/snapshots" -e URL=rtsp://192.168.1.63/unicast -p 80:80 thomx/rtsp-snapshot
+docker run "/path/to/snapshot/on/host:/var/www/localhost/htdocs/snapshots" -e URL=rtsp://192.168.1.63:8080/stream1 -p 80:80 rtsp-snapshot
 ```
 
 Take a snapshot :
@@ -50,14 +46,6 @@ http://localhost/snapshots
 * mini_httpd 1.23-r1
 * ffmpeg 2.8.11-r0
 
-## Find Me
-
-* [GitHub](https://github.com/Thom-x/)
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the 
-[tags on this repository](https://github.com/your/repository/tags). 
 
 ## License
 
