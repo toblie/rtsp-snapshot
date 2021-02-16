@@ -1,4 +1,20 @@
-FROM dseg/mini_httpd-cgi
+FROM arm64v8/alpine
+MAINTAINER Daichi Shinozaki <dseg@shield.jp>
+
+RUN \
+ apk add --update mini_httpd bash curl \
+ &&\
+ sed \
+  -i /etc/mini_httpd/mini_httpd.conf \
+  -e 's/^chroot$/#chroot/' \
+  -e 's/^#nochroot$/nochroot/' \
+ &&\
+ rm -rf /var/cache/apk/*
+
+EXPOSE 80
+
+VOLUME /var/www/localhost/htdocs
+
 MAINTAINER Maugin Thomas
 
 RUN \
