@@ -2,7 +2,7 @@
 
 
 
-Simple docker image to grab snapshot from a RTSP stream using ARM64 device like RPi as a form from https://github.com/Thom-x/rtsp-snapshot.
+Simple docker image to grab snapshot from a RTSP stream using ARM64 device like RPi as a fork from https://github.com/Thom-x/rtsp-snapshot.
 
 ## Getting Started
 
